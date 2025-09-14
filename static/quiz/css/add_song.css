@@ -1,0 +1,164 @@
+/* ---------------------------
+   Global Styles
+---------------------------- */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+}
+
+/* ---------------------------
+   Card Styling
+---------------------------- */
+.card {
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------------------
+   Headings
+---------------------------- */
+.card h3 {
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------------------------
+   Form Controls
+---------------------------- */
+form p {
+  margin-bottom: 1.2rem;
+}
+
+form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+form input[type="text"],
+form input[type="file"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+/* ---------------------------
+   Buttons
+---------------------------- */
+button[type="submit"] {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: #fff;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(37, 117, 252, 0.35);
+}
+
+/* ---------------------------
+   Navbar
+---------------------------- */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #8f94fb !important;
+}
+
+/* ---------------------------
+   Footer
+---------------------------- */
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+/* ---------------------------
+   Responsive Tweaks
+---------------------------- */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 10px;
+  }
+}
+/* Ripple effect */
+button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+}
+
+button[type="submit"] .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+/* Custom File Button */
+.custom-file-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-file-btn:hover {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  box-shadow: 0 5px 15px rgba(37, 117, 252, 0.35);
+  transform: translateY(-2px);
+}

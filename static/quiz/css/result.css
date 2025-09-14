@@ -1,0 +1,63 @@
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Card */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+/* Headings */
+h2 {
+    color: #212529;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+/* Buttons */
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary:hover {
+    background-color: #6c757d;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+    .d-flex.flex-wrap {
+        flex-direction: column;
+        gap: 0.75rem !important;
+    }
+}
+
+/* Wrong answer shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+/* Red glow for wrong answer */
+.wrong-answer {
+  animation: shake 0.5s;
+  border: 2px solid #f44336;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.6);
+}

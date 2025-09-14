@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Song</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="{% static 'quiz/css/add_song.css' %}">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🎵 MelodyMaster</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Add Song</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">My Songs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Form -->
+  <main class="flex-grow-1">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4">
+              <h3 class="text-center mb-4 fw-bold text-dark">🎶 Add a New Song</h3>
+
+              <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  
+  <div class="mb-3">
+    {{ form.song_title.label_tag }}
+    {{ form.song_title }}
+  </div>
+
+  <div class="mb-3">
+    {{ form.movie_title.label_tag }}
+    {{ form.movie_title }}
+  </div>
+
+  <!-- Custom File Upload -->
+  <div class="mb-3">
+    <label class="form-label fw-semibold">Upload Song File</label>
+    <input type="file" name="audio_file" id="fileInput" class="d-none">
+    <label for="fileInput" class="custom-file-btn">📂 Choose File</label>
+    <span id="fileName" class="ms-2 text-muted">No file chosen</span>
+  </div>
+
+  <div class="d-grid">
+    <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">Add Song</button>
+  </div>
+</form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-light mt-auto">
+    <p class="mb-0">© 2025 MelodyMaster | Crafted with ❤️</p>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your Custom JS -->
+  <script src="{% static 'quiz/js/add_song.js' %}"></script>
+</body>
+</html>

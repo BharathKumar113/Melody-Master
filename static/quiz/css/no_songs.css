@@ -1,0 +1,13 @@
+
+    /* Floating music note animation */
+    .floating-note {
+      font-size: 3rem;
+      animation: float 2s ease-in-out infinite alternate;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }

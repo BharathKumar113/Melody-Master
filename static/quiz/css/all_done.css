@@ -1,0 +1,70 @@
+/* all_done.css */
+
+/* Body and general layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light background */
+}
+
+/* Card styling */
+.card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    padding: 2rem;
+}
+
+/* Headings and text */
+h2 {
+    color: #212529;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+/* Buttons */
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-success:hover {
+    background-color: #198754;
+}
+
+.btn-secondary:hover {
+    background-color: #6c757d;
+}
+
+/* Footer */
+footer {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+/* Flex container for buttons */
+.d-flex.gap-3.flex-wrap {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+    .card {
+        margin: 1rem;
+    }
+    .d-flex.gap-3.flex-wrap {
+        flex-direction: column;
+        gap: 0.75rem !important;
+    }
+}

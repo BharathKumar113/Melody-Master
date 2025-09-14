@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Done!</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'quiz/css/all_done.css' %}">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🎵 MelodyMaster</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'add_song' %}">Add Song</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">My Songs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow-1">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card shadow-lg border-0 text-center">
+            <div class="card-body">
+              <h2 class="fw-bold mb-3">🎉 You’ve completed all available songs!</h2>
+              <p class="mb-4">Thanks for playing the Music Quiz.</p>
+
+              <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{% url 'add_song' %}" class="btn btn-primary btn-lg rounded-pill shadow-sm">Add More Songs</a>
+                <a href="{% url 'restart_quiz' %}" class="btn btn-success btn-lg rounded-pill shadow-sm">Play Again</a>
+                <a href="{% url 'home' %}" class="btn btn-secondary btn-lg rounded-pill shadow-sm">Back to Home</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-light mt-auto">
+    <p class="mb-0">© 2025 MelodyMaster | Crafted with ❤️</p>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Confetti JS -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    });
+  </script>
+
+</body>
+</html>

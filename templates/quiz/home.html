@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎵 MelodyMaster</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'quiz/css/home.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 px-4 shadow-sm bg-white">
+  <a class="navbar-brand fw-bold" href="#">🎵 MelodyMaster</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="#play">Play</a></li>
+      <li class="nav-item"><a class="nav-link" href="#add">Add Song</a></li>
+      <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+      <li class="nav-item"><a class="nav-link" href="#info">Info</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center justify-content-center text-center">
+  <div class="container position-relative">
+    <h1 class="display-4 fw-bold mb-3">🎶 MelodyMaster</h1>
+    <p class="lead mb-4">Listen. Guess. Celebrate! Test your music knowledge with fun quizzes.</p>
+    <a href="{% url 'play_song' %}" class="btn btn-primary btn-lg rounded-pill shadow-sm">🎧 Play Quiz Now</a>
+    <div class="floating-hint">Hint: Click the button to start your first quiz!</div>
+  </div>
+</section>
+
+<!-- Play / Add / Stats Cards -->
+<section class="cards-section py-5">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4" id="play">
+        <div class="card glass-card text-center p-4">
+          <h3 class="mb-3">🎧 Play Quiz</h3>
+          <p class="text-muted">Random songs, limited time, fun challenge. How many can you guess?</p>
+          <a href="{% url 'play_song' %}" class="btn btn-primary mt-3">Start Playing</a>
+        </div>
+      </div>
+
+      <div class="col-md-4" id="add">
+        <div class="card glass-card text-center p-4">
+          <h3 class="mb-3">➕ Add Song</h3>
+          <p class="text-muted">Share your favorite songs and make the game more fun for everyone!</p>
+          <a href="{% url 'add_song' %}" class="btn btn-success mt-3">Add Song</a>
+        </div>
+      </div>
+
+      <div class="col-md-4" id="stats">
+        <div class="card glass-card text-center p-4">
+          <h3 class="mb-3">📊 Your Stats</h3>
+          <p class="text-muted">Track your performance, see correct vs wrong answers, and improve!</p>
+          <a href="{% url 'stats' %}" class="btn btn-warning mt-3">View Stats</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How it Works Section -->
+<section class="how-it-works py-5" id="info">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">How It Works</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="feature-card p-4 text-center">
+          <h3>1. Listen & Guess 🎵</h3>
+          <p>Play a song snippet, guess the song or movie. 20-second timer keeps the game challenging.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card p-4 text-center">
+          <h3>2. Track Your Score 📊</h3>
+          <p>Check correct vs wrong answers, average time, and overall progress.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card p-4 text-center">
+          <h3>3. Contribute Songs ➕</h3>
+          <p>Add new songs to the quiz library and challenge other players!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3 bg-light text-dark mt-auto shadow-sm">
+  <p class="mb-0">© 2025 MelodyMaster | Crafted with ❤️</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
